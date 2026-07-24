@@ -1,13 +1,18 @@
 def solution(n):
-    count = 1
-    for start in range(1, (n + 1) // 2):
-        sum = start
-        for end in range(start + 1, (n + 1) // 2 + 1):
-            sum += end
-            if sum == n:
-                count += 1
-                break
-            elif sum > n:
-                break
+    count = 1  # n = n
+    left, right = 1, 1
+    total = 1
+    
+    while left < n:
+        if total == n:
+            count += 1
+            total -= left
+            left += 1
+        elif total < n:
+            right += 1
+            total += right
+        else:  # total > n
+            total -= left
+            left += 1
     
     return count
