@@ -1,11 +1,14 @@
 def solution(s):
+    # Use a stack to simulate removing adjacent equal characters.
     stack = []
-    for c in s:
-        if stack and stack[-1] == c:
+    
+    for ch in s:
+        # If the top of the stack is the same as the current character,
+        # remove it as a pair.
+        if stack and stack[-1] == ch:
             stack.pop()
         else:
-            stack.append(c)
+            stack.append(ch)
     
-    if stack:
-        return 0
-    return 1
+    # If the stack is empty, all characters were removed successfully.
+    return 1 if not stack else 0
