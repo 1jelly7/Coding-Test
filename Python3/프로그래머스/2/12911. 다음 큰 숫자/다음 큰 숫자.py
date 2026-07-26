@@ -1,14 +1,12 @@
 def solution(n):
-    answer = n + 1
-    while True:
-        n_bin = format(n, 'b')
-        answer_bin = format(answer, 'b')
-        
-        count_n = len([c for c in n_bin if c == '1'])
-        count_answer = len([c for c in answer_bin if c == '1'])
-        if count_n == count_answer:
-            break
-        
-        answer += 1
+    # Count how many 1s are in the binary representation of n.
+    target_ones = bin(n).count('1')
     
-    return answer
+    # Start checking numbers greater than n one by one.
+    candidate = n + 1
+    while True:
+        # If the candidate has the same number of 1s,
+        # it is the answer
+        if bin(candidate).count('1') == target_ones:
+            return candidate
+        candidate += 1
