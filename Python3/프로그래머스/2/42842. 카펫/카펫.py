@@ -1,16 +1,17 @@
-def solution(brown, yellow):
-    pairs = set()
-    
+def solution(brown, yellow):    
+    # Try every possible height of the inner yellow rectangle.
     for height in range(1, yellow + 1):
-        if yellow % height == 0:
-            width = yellow // height
-            if height > width:
-                width, height = height, width
-            pairs.add((width, height))
+        # The width must divide the yellow area exactly.
+        if yellow % height:
+            continue
+            
+        width = yellow // height
+        
+        # The full carpet is 2 cells larger in each dimension.
+        carpet_width = width + 2
+        carpet_height = height + 2
     
-    answer = None
-    for pair in pairs:
-        if (pair[0] + pair[1])*2 + 4 == brown:
-            answer = [pair[0] + 2, pair[1] + 2]
-    
-    return answer
+        # Check whether the border area matches the brown count.
+        if carpet_width * carpet_height - yellow == brown:
+            # The problem requires width to be greater than or equal to height.
+            return [carpet_width, carpet_height]
