@@ -1,8 +1,11 @@
 def solution(n):
-    digits = str(n)
+    if n < 0:
+        raise ValueError("n must be a non-negative integer")
     
     total = 0
-    for d in digits:
-        total += int(d)
+    
+    while n > 0:
+        total += n % 10
+        n //= 10
     
     return total
