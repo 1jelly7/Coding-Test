@@ -1,17 +1,18 @@
+def gcd(a: int, b: int) -> int:
+    while b:
+        a, b = b, a % b
+    
+    return a
+
+def lcm(a: int, b: int, gcd: int) -> int:
+    return a * b // gcd
+    
+
 def solution(n, m):
-    n, m = (n, m) if n > m else (m, n)
+    if n < 1 or m < 1:
+        raise ValueError("n and m must be positive integers")
     
-    max_num = 1
-    for num in range(2, m + 1):
-        if n % num == 0 and m % num == 0:
-            max_num = num
+    g = gcd(m, n)
+    l = lcm(m, n, g)
     
-    min_num, num = 0, n
-    while True:
-        if num % n == 0 and num % m == 0:
-            min_num = num
-            break
-        
-        num += max_num
-    
-    return [max_num, min_num]
+    return [g, l]
