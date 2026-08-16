@@ -1,7 +1,4 @@
-def solution(s):    
-    if not isinstance(s, str):
-        raise ValueError("s must be an string")
-    
+def solution(s):
     last_seen = {}
     result = []
     
