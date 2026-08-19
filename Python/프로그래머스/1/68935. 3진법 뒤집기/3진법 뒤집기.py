@@ -1,15 +1,11 @@
 def solution(n):
-    bin_num = 3
-    bin = []
+    base = 3
     
+    digits = []
     while n > 0:
-        bin.append(n % bin_num)
-        n //= bin_num
+        digits.append(str(n % base))
+        n //= base
     
-    result = 0
-    mul = 1
-    for num in bin[::-1]:
-        result += num * mul
-        mul *= bin_num
+    reversed = ''.join(digits)
     
-    return result
+    return int(reversed, base)
