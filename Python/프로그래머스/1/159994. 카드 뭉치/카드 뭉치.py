@@ -1,17 +1,18 @@
-def solution(cards1, cards2, goal):
-    i1, i2, i3 = 0, 0, 0
+from typing import List
+
+def solution(cards1: List[str], cards2: List[str], goal: List[str]) -> str:    
+    for name, value in (("cards1", cards1), ("cards2", cards2), ("goal", goal)):
+        if not isinstance(value, list) or not all(isinstance(word, str) for word in value):
+            raise TypeError(f"{name} must be a list of strings.")
     
-    while True:
-        if i3 >= len(goal):
-            return "Yes"
-        
-        if i1 < len(cards1) and goal[i3] == cards1[i1]:
-            i1 += 1
-            i3 += 1
-        elif i2 < len(cards2) and goal[i3] == cards2[i2]:
-            i2 += 1
-            i3 += 1
+    idx1, idx2 = 0, 0
+    
+    for word in goal:        
+        if idx1 < len(cards1) and cards1[idx1] == word:
+            idx1 += 1
+        elif idx2 < len(cards2) and cards2[idx2] == word:
+            idx2 += 1
         else:
-            break
+            return "No"
     
-    return "No"
+    return "Yes"
