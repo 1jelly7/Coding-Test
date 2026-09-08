@@ -1,11 +1,11 @@
 def solution(num_list):
-    evens = 0
-    odds = 0
+    even_count = 0
+    odd_count = 0
     
     for num in num_list:
         if num % 2 == 0:
-            evens += 1
+            even_count += 1
         else:
-            odds += 1
+            odd_count += 1
     
-    return [evens, odds]
+    return [even_count, odd_count]
