@@ -1,11 +1,4 @@
-from itertools import combinations
-
 def solution(numbers):
-    combs = combinations(numbers, 2)
+    sorted_numbers = sorted(numbers)
     
-    result = 0
-    for a, b in combs:
-        if a * b > result:
-            result = a * b
-    
-    return result
+    return sorted_numbers[-1] * sorted_numbers[-2]
