@@ -1,8 +1,14 @@
+import math
+
 def solution(n):
-    divisors = []
+    if not isinstance(n, int) or isinstance(n, bool):
+        raise TypeError("n must be an integer.")
     
-    for i in range(1, n + 1):
+    divisors = set()
+    
+    for i in range(1, math.isqrt(n) + 1):
         if n % i == 0:
-            divisors.append(i)
+            divisors.add(i)
+            divisors.add(n // i)
     
-    return divisors
+    return sorted(divisors)
