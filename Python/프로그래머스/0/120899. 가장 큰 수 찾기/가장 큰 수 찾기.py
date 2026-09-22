@@ -1,5 +1,5 @@
 def solution(array):
-    max_val = max(array)
-    max_idx = array.index(max_val)
+    max_value = max(array)
+    max_index = array.index(max_value)
     
-    return [max_val, max_idx]
+    return [max_value, max_index]
