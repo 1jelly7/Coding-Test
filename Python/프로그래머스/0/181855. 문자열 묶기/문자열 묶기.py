@@ -1,10 +1,6 @@
+from collections import Counter
+
 def solution(strArr):
-    count_dict = {}
+    length_counts = Counter(len(value) for value in strArr)
     
-    for s in strArr:
-        if len(s) not in count_dict:
-            count_dict[len(s)] = 1
-        else:
-            count_dict[len(s)] += 1
-    
-    return max(count_dict.values())
+    return max(length_counts.values())
