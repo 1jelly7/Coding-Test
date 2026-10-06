@@ -1,10 +1,12 @@
 def solution(strArr):
     result = []
     
-    for idx, string in enumerate(strArr):
-        if idx % 2 == 1:
-            result.append(string.upper())
+    for index, text in enumerate(strArr):
+        if index % 2 == 1:
+            converted_text = text.upper()
         else:
-            result.append(string.lower())
+            converted_text = text.lower()
+        
+        result.append(converted_text)
     
     return result
