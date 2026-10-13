@@ -1,2 +1,2 @@
 def solution(num_str):
-    return sum(int(num) for num in num_str)
+    return sum(int(digit) for digit in num_str)
