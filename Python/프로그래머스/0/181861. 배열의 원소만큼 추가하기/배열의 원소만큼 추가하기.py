@@ -1,7 +1,7 @@
 def solution(arr):
     result = []
     
-    for num in arr:
-        result += [num] * num
+    for value in arr:
+        result += [value] * value
     
     return result
