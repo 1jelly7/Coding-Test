@@ -1,7 +1,12 @@
 def solution(num_list):
-    if num_list[-1] > num_list[-2]:
-        num_list.append(num_list[-1] - num_list[-2])
+    previous = num_list[-2]
+    last = num_list[-1]
+    
+    if last > previous:
+        value = last - previous
     else:
-        num_list.append(num_list[-1] * 2)
+        value = last * 2
+    
+    num_list.append(value)
     
     return num_list
