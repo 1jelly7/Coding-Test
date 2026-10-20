@@ -1,2 +1,4 @@
+SLICES_PER_PIZZA = 7
+
 def solution(n):
-    return n // 7 + bool(n % 7)
+    return (n + SLICES_PER_PIZZA - 1) // SLICES_PER_PIZZA
