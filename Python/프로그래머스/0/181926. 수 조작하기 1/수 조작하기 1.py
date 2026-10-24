@@ -1,4 +1,4 @@
-control_dict = {
+commands = {
         "w": 1,
         "s": -1,
         "d": 10,
@@ -6,7 +6,7 @@ control_dict = {
     }
 
 def solution(n, control):
-    for ch in control:
-        n += control_dict[ch]
+    for command in control:
+        n += commands[command]
     
     return n
