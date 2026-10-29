@@ -1,12 +1,8 @@
-def solution(rsp):    
-    result = []
-    
-    for ch in rsp:
-        if ch == "2":
-            result.append("0")
-        elif ch == "0":
-            result.append("5")
-        elif ch == "5":
-            result.append("2")
-    
-    return "".join(result)
+WINNING_HAND = {
+    "2": "0",
+    "0": "5",
+    "5": "2",
+}
+
+def solution(rsp):
+    return "".join(WINNING_HAND[hand] for hand in rsp)
