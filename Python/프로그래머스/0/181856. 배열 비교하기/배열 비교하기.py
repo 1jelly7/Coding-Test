@@ -1,15 +1,8 @@
+def _comparison_key(arr):
+    return (len(arr), sum(arr))
+
 def solution(arr1, arr2):
-    if len(arr1) == len(arr2):
-        sum1 = sum(arr1)
-        sum2 = sum(arr2)
-        
-        if sum1 == sum2:
-            return 0
-        elif sum1 > sum2:
-            return 1
-        else:
-            return -1
-    elif len(arr1) > len(arr2):
-        return 1
-    else:
-        return -1
+    key1 = _comparison_key(arr1)
+    key2 = _comparison_key(arr2)
+    
+    return (key1 > key2) - (key1 < key2)
