@@ -1,12 +1,13 @@
+THRESHOLD = 50
+
+def _transform(x):
+    is_even = x % 2 == 0
+    
+    if x >= THRESHOLD and is_even:
+        return x // 2
+    if x < THRESHOLD and not is_even:
+        return x * 2
+    return x
+
 def solution(arr):
-    result = []
-    
-    for value in arr:
-        if value >= 50 and value % 2 == 0:
-            result.append(value // 2)
-        elif value < 50 and value % 2 != 0:
-            result.append(value * 2)
-        else:
-            result.append(value)
-    
-    return result
+    return [_transform(x) for x in arr]
