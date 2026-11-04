@@ -1,2 +1,4 @@
+from math import prod
+
 def solution(box, n):
-    return (box[0] // n) * (box[1] // n) * (box[2] // n)
+    return prod(side // n for side in box)
