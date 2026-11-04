@@ -1,11 +1,4 @@
-keys = ("3", "6", "9")
+CLAP_DIGITS = frozenset("369")
 
-def solution(order):
-    order_text= str(order)
-    
-    count = 0
-    for digit in order_text:
-        if digit in keys:
-            count += 1
-    
-    return count
+def solution(order):        
+    return sum(1 for digit in str(order) if digit in CLAP_DIGITS)
