@@ -1,6 +1,4 @@
 def solution(my_string, num1, num2):
-    my_list = list(my_string)
-    my_list[num1], my_list[num2] = my_list[num2], my_list[num1]
-    
-    return "".join(my_list)
-    
+    chars = list(my_string)
+    chars[num1], chars[num2] = chars[num2], chars[num1]
+    return "".join(chars)
