@@ -1,6 +1,6 @@
+SWAP_TABLE = str.maketrans("AB", "BA")
+
 def solution(myString, pat):
-    myString = myString.replace("A", "C")
-    myString = myString.replace("B", "A")
-    myString = myString.replace("C", "B")
+    swapped = myString.translate(SWAP_TABLE)
     
-    return int(pat in myString)
+    return int(pat in swapped)
