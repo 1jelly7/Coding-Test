@@ -1,6 +1,4 @@
 def solution(arr, delete_list):
-    for value in delete_list:
-        if value in arr:
-            arr.remove(value)
+    delete_set = set(delete_list)
     
-    return arr
+    return [value for value in arr if value not in delete_set]
