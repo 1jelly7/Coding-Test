@@ -1,11 +1,12 @@
 def solution(binomial):
-    a, op, b = binomial.split()
-    a = int(a)
-    b = int(b)
+    left, op, right = binomial.split()
+    
+    left = int(left)
+    right = int(right)
     
     if op == "+":
-        return a + b
+        return left + right
     if op == "-":
-        return a - b
+        return left - right
     if op == "*":
-        return a * b
+        return left * right
