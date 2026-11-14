@@ -1,2 +1,2 @@
 def solution(myString):
-    return [len(text) for text in myString.split("x")]
+    return [len(piece) for piece in myString.split("x")]
