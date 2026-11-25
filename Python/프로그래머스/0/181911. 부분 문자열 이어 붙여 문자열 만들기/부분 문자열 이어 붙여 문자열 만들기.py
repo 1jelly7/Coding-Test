@@ -1,7 +1,4 @@
 def solution(my_strings, parts):
-    result = ""
-    
-    for index, part in enumerate(parts):
-        result += my_strings[index][part[0] : part[1] + 1]
-    
-    return result
+    return "".join(
+        text[start : end + 1] for text, (start, end) in zip(my_strings, parts)
+    )
