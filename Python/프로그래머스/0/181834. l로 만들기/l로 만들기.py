@@ -1,2 +1,4 @@
+THRESHOLD = "l"
+
 def solution(myString):
-    return "".join("l" if ch < "l" else ch for ch in myString)
+    return "".join(max(ch, THRESHOLD) for ch in myString)
