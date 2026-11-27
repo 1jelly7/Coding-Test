@@ -1,13 +1,13 @@
 def solution(n):
-    result = [n]
-    
+    sequence = [n]
     x = n
+    
     while x > 1:
         if x % 2 == 0:
             x //= 2
         else:
             x = 3 * x + 1
         
-        result.append(x)
+        sequence.append(x)
     
-    return result
+    return sequence
